@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Listing {
+  id             String   @id @default(cuid())
+  tokenAddress   String
+  tokenName      String
+  tokenTicker    String
+  description    String?
+  imageUrl       String?
+  creatorWallet  String
+  txSignature    String   @unique
+  status         String   @default("pending") // pending | live | bonded | dead
+  solPaid        Float    @default(1.0)
+  solPayout      Float?
+  payoutTx       String?
+  botBuyTx       String?
+  botSellTx      String?
+  botBuyAmount   Float?   // SOL spent on buy
+  bondingProgress Float?  // 0-1, last checked progress
+  bondedAt       DateTime?
+  diedAt         DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([status])
+  @@index([creatorWallet])
+  @@index([tokenAddress])
+}
