@@ -38,64 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background:
-    radial-gradient(1px 1px at 10% 10%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 35% 15%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 50% 5%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 65% 25%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 75% 8%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 85% 30%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 90% 12%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 40% 35%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 70% 50%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 25% 22%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 80% 42%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 5% 35%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 95% 20%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1.5px 1.5px at 45% 18%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1.5px 1.5px at 60% 8%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 30% 48%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 8% 52%, rgba(255,255,255,0.4), transparent);
-  background-color: #000008;
-  pointer-events: none;
-}
-
-/* Synthwave perspective grid floor */
-body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: -50%;
-  right: -50%;
-  height: 45vh;
-  z-index: -1;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(185, 103, 255, 0.3) 0px,
-      transparent 1px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(100, 80, 255, 0.25) 0px,
-      transparent 1px,
-      transparent 40px
-    );
-  transform: perspective(400px) rotateX(60deg);
-  transform-origin: center top;
-  pointer-events: none;
-  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-}
 
 /* Video background */
 .video-bg {
@@ -115,24 +57,21 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 8, 0.7);
+  background: rgba(0, 0, 8, 0.9);
   pointer-events: none;
 }
 
-/* Neon glow text utility */
+/* Subtle text colors */
 .neon-pink {
   color: var(--vw-pink);
-  text-shadow: 0 0 7px var(--vw-pink), 0 0 20px var(--vw-pink), 0 0 40px rgba(255, 110, 199, 0.4);
 }
 
 .neon-cyan {
   color: var(--vw-cyan);
-  text-shadow: 0 0 7px var(--vw-cyan), 0 0 20px var(--vw-cyan), 0 0 40px rgba(0, 255, 249, 0.4);
 }
 
 .neon-purple {
   color: var(--vw-purple);
-  text-shadow: 0 0 7px var(--vw-purple), 0 0 20px var(--vw-purple), 0 0 40px rgba(185, 103, 255, 0.4);
 }
 
 /* Vaporwave card */
@@ -140,21 +79,16 @@ body::after {
   background: var(--vw-card);
   border: 1px solid var(--vw-border);
   backdrop-filter: blur(8px);
-  box-shadow:
-    0 0 15px rgba(185, 103, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .vw-card-pink {
   background: var(--vw-card);
-  border: 1px solid rgba(255, 110, 199, 0.3);
-  box-shadow: 0 0 15px rgba(255, 110, 199, 0.1);
+  border: 1px solid rgba(255, 110, 199, 0.2);
 }
 
 .vw-card-cyan {
   background: var(--vw-card);
-  border: 1px solid rgba(0, 255, 249, 0.3);
-  box-shadow: 0 0 15px rgba(0, 255, 249, 0.1);
+  border: 1px solid rgba(0, 255, 249, 0.2);
 }
 
 /* Vaporwave button */
@@ -165,12 +99,11 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: none;
-  box-shadow: 0 0 20px rgba(255, 110, 199, 0.3), 0 0 40px rgba(185, 103, 255, 0.15);
   transition: all 0.2s;
 }
 
 .vw-btn:hover {
-  box-shadow: 0 0 30px rgba(255, 110, 199, 0.5), 0 0 60px rgba(185, 103, 255, 0.25);
+  opacity: 0.9;
   transform: translateY(-1px);
 }
 
@@ -203,8 +136,5 @@ body::after {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(90deg, var(--vw-pink), var(--vw-cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
 }
