@@ -50,6 +50,41 @@ export default function HomePage() {
           <div className="mx-auto mt-6 h-px w-48 bg-gradient-to-r from-transparent via-vw-pink to-transparent" />
         </section>
 
+        {/* How It Works */}
+        <section className="mb-12">
+          <div className="vw-card p-6 sm:p-8">
+            <h2 className="mb-2 text-center text-xl font-bold uppercase tracking-wider neon-purple">
+              How It Works
+            </h2>
+            <p className="mb-6 text-center text-xs text-vw-purple/40">
+              Devs who list here put 1 SOL on the line — so the community knows they&apos;re serious.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded border border-vw-border/50 bg-vw-dark/50 p-4 text-center">
+                <div className="mb-2 text-2xl font-black neon-pink">1</div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-1">List Your Token</h3>
+                <p className="text-xs text-vw-purple/50">
+                  Send 1 SOL to the treasury and submit your token details. This proves you&apos;re a trusted dev who backs their project.
+                </p>
+              </div>
+              <div className="rounded border border-vw-border/50 bg-vw-dark/50 p-4 text-center">
+                <div className="mb-2 text-2xl font-black neon-pink">2</div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-1">We Buy Your Bag</h3>
+                <p className="text-xs text-vw-purple/50">
+                  Our bot buys 1 SOL of your token on pump.fun and monitors the bonding curve in real time.
+                </p>
+              </div>
+              <div className="rounded border border-vw-border/50 bg-vw-dark/50 p-4 text-center">
+                <div className="mb-2 text-2xl font-black neon-pink">3</div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-1">Get Rewarded</h3>
+                <p className="text-xs text-vw-purple/50">
+                  If your token bonds, we sell and send you the profits. If it dies, the SOL gets burned — we don&apos;t keep any of it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats */}
         <section className="mb-8">
           <StatsBar />
@@ -103,9 +138,6 @@ export default function HomePage() {
           </p>
           <p className="mt-1 text-sm font-bold neon-purple">
             It&apos;s here to show you who actually believed.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-vw-purple/20">
-            vaporwave by design &middot; 2026
           </p>
         </footer>
       </main>

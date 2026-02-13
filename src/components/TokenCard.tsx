@@ -85,7 +85,7 @@ export default function TokenCard({ listing }: { listing: Listing }) {
   const statusMessages: Record<string, string> = {
     live: "This dev paid 1 SOL. Respect.",
     bonded: `Bags survived. Dev rewarded ${listing.solPayout || "?"} SOL.`,
-    dead: "RIP. SOL secured.",
+    dead: "RIP. SOL burned.",
     pending: "Waiting for confirmation...",
   };
 

@@ -6,16 +6,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-vw-purple/20 bg-vw-dark/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image src="/logoo.png" alt="Bagscreener" width={32} height={32} className="h-8 w-8" />
           <h1 className="text-xl font-bold tracking-tight">
             <span className="neon-pink">bag</span>
-            <span className="neon-cyan">screener</span>
+            <span style={{ color: "#B06AFF" }}>screener</span>
           </h1>
           <div className="hidden items-center gap-2 ml-4 md:flex">
-            <span className="text-xs font-bold uppercase tracking-wider neon-pink">CA:</span>
+            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "#B06AFF" }}>CA:</span>
             <code
-              className="cursor-pointer border border-vw-pink/20 bg-vw-dark/80 px-2 py-0.5 text-xs font-bold text-vw-pink/70 transition hover:text-vw-cyan select-all"
+              className="cursor-pointer border bg-vw-dark/80 px-2 py-0.5 text-xs font-bold transition hover:text-vw-cyan select-all"
+              style={{ borderColor: "rgba(176, 106, 255, 0.2)", color: "rgba(176, 106, 255, 0.7)" }}
               onClick={() => {
                 const ca = process.env.NEXT_PUBLIC_PRODUCT_CA || "";
                 if (ca) navigator.clipboard.writeText(ca);

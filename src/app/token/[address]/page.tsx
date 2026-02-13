@@ -180,10 +180,10 @@ export default function TokenDetailPage() {
             {/* Chart embed */}
             <div className="vw-card overflow-hidden">
               <iframe
-                src={`https://pump.fun/coin/${address}`}
+                src={`https://birdeye.so/tv-widget/${address}?chain=solana&viewMode=pair&chartInterval=15&chartType=CANDLE&chartTimezone=UTC&chartLeftToolbar=show&theme=dark`}
                 className="w-full h-[500px] border-0"
-                title="Pump.fun chart"
-                sandbox="allow-scripts allow-same-origin"
+                title="Birdeye chart"
+                allowFullScreen
               />
             </div>
 
