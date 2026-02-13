@@ -2,6 +2,7 @@
 
 import { Skull, Clock, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface Listing {
   id: string;
@@ -89,7 +90,7 @@ export default function TokenCard({ listing }: { listing: Listing }) {
   };
 
   return (
-    <div className={cn("p-5 transition-all hover:brightness-110", statusCardClass[listing.status] || "vw-card")}>
+    <Link href={`/token/${listing.tokenAddress}`} className={cn("block p-5 transition-all hover:brightness-110 cursor-pointer", statusCardClass[listing.status] || "vw-card")}>
       <div className="flex items-start gap-4">
         {listing.imageUrl ? (
           <div className="flex-shrink-0 border border-vw-purple/20 bg-vw-dark">
@@ -151,6 +152,7 @@ export default function TokenCard({ listing }: { listing: Listing }) {
           href={`https://pump.fun/coin/${listing.tokenAddress}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
           className="text-xs font-bold uppercase tracking-wider text-vw-purple/40 transition hover:text-vw-pink"
         >
           pump.fun
@@ -160,6 +162,7 @@ export default function TokenCard({ listing }: { listing: Listing }) {
           href={listing.botBuyTx ? `https://solscan.io/tx/${listing.botBuyTx}` : `https://solscan.io/token/${listing.tokenAddress}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
           className="text-xs font-bold uppercase tracking-wider text-vw-purple/40 transition hover:text-vw-pink"
         >
           solscan
@@ -169,6 +172,6 @@ export default function TokenCard({ listing }: { listing: Listing }) {
           {truncateAddress(listing.tokenAddress)}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
