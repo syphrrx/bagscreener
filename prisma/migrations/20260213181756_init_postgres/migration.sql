@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Listing" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "tokenAddress" TEXT NOT NULL,
     "tokenName" TEXT NOT NULL,
     "tokenTicker" TEXT NOT NULL,
@@ -9,13 +9,19 @@ CREATE TABLE "Listing" (
     "creatorWallet" TEXT NOT NULL,
     "txSignature" TEXT NOT NULL,
     "status" TEXT NOT NULL DEFAULT 'pending',
-    "solPaid" REAL NOT NULL DEFAULT 1.0,
-    "solPayout" REAL,
+    "solPaid" DOUBLE PRECISION NOT NULL DEFAULT 1.0,
+    "solPayout" DOUBLE PRECISION,
     "payoutTx" TEXT,
-    "bondedAt" DATETIME,
-    "diedAt" DATETIME,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "botBuyTx" TEXT,
+    "botSellTx" TEXT,
+    "botBuyAmount" DOUBLE PRECISION,
+    "bondingProgress" DOUBLE PRECISION,
+    "bondedAt" TIMESTAMP(3),
+    "diedAt" TIMESTAMP(3),
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Listing_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
